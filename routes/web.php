@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MapController::class, 'index']);
 Route::post('/nodes', [MapController::class, 'store'])->name('nodes.store');
+Route::delete('/nodes/{id}', [MapController::class, 'destroy'])->name('nodes.destroy');
+Route::post('/cables', [MapController::class, 'storeCable'])->name('cables.store');
 
 Route::get('/cable/{id}', [MapController::class, 'show'])->name('cable.show');
 
